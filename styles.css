@@ -1,0 +1,1151 @@
+/* Alexander Patterson Responsive Web Development CSS Assignment
+ http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0 | 20110126
+    License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* -----end of css reset----- */
+
+:root {
+    --yellow: #F6D64A;
+    --teal: #55BCD5;
+    --purple: #9B26B0;
+    --blue: #499BD2;
+    --dark-gray: #222222;
+    --light-gray: #EAEAEA;
+    --white: #FFFFFF;
+    --black: #000000;
+}
+
+#skip {
+    position: absolute;
+    transform: translateX(-101vw);
+}
+#skip:focus {
+    transform: translate(0);
+}
+
+#about {
+    background-color: var(--blue);
+}
+
+h1, h2, h3 {
+    font-family: 'Molle', cursive;
+}
+h4, p, q, small, nav, button, form {
+    font-family: 'Montserrat', sans-serif;
+}
+header {
+    background: linear-gradient(var(--teal), var(--white));
+}
+html {
+    display: grid;
+}
+#plan {
+    background-color: var(--yellow);
+}
+#plan h4 {
+    text-align: center;
+}
+#plan img {
+    background-color: var(--teal);
+    border: 3px solid var(--white);
+    border-radius: 15px;
+}
+
+.sr-only {
+    display: none;
+}
+    #about {
+        grid-area: aboutDestination;
+    }
+    #about h3 {
+        grid-area: aboutHeader;
+    }
+    #about section:first-of-type {
+        grid-area: size;
+    }
+    #about section:nth-child(2) {
+        grid-area: elevation;
+    }
+    #about section:nth-child(3) {
+        grid-area: location;
+    }
+    #about section:nth-child(4) {
+        grid-area: population;
+    }
+    #contact {
+        grid-area: contact;
+    }
+    #contact h3 {
+        grid-area: contactHeader;
+    }
+    #contact form {
+        grid-area: form;
+    }
+    footer {
+        grid-area: footer;
+    }
+    header a {
+        grid-area: logoImg;
+    }    
+    header h1 {
+        grid-area: headerLogo;
+    }
+    header p {
+        grid-area: headerText;
+    }
+    #intro img:first-child {
+        grid-area: img1;
+    }
+    #intro img:nth-of-type(2) {
+        grid-area: img2;
+    }
+    #intro img:last-child {
+        grid-area: img3;
+    }
+    #intro h2 {
+        grid-area: majorcaHeader;
+    }
+    #intro p {
+        grid-area: majorcaText;
+    }
+    #menu-toggle li:first-child a {
+        grid-area: destinationsNav;
+    }
+    #menu-toggle li:nth-child(2) a {
+        grid-area: inspirationsNav;
+    }
+    #menu-toggle li:nth-child(3) a {
+        grid-area: specialsNav;
+    }
+    #menu-toggle li:nth-child(4) a {
+        grid-area: contactNav;
+    }
+    #plan {
+        grid-area: planTrip;
+    }
+    #plan h3 {
+        grid-area: planTripHeader;
+    }
+    #plan section:first-of-type {
+        grid-area: howToGetThere;
+    }
+    #plan section:nth-child(2) {
+        grid-area: placesToStay;
+    }
+    #plan section:nth-child(3) {
+        grid-area: thingsToDo;
+    }
+    #plan section:nth-child(4) {
+        grid-area: whereToEat;
+    }
+    #testimonials {
+        grid-area: testimonials;
+    }
+    #testimonials h3 {
+        grid-area: testimonialsHeader;
+    }
+    #testimonials section:first-of-type {
+        grid-area: amanda;
+    }
+    #testimonials section:nth-child(2) {
+        grid-area: max;
+    }
+    #testimonials section:nth-child(3) {
+        grid-area: ines;
+    }
+    #testimonials section:nth-child(4) {
+        grid-area: carmen;
+    }
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+
+    #menu-toggle {
+        background-color: var(--yellow);
+        color: var(--black);
+        display: block;
+        font-weight: bold;
+        margin: 0 auto;
+        position: absolute;
+        top: 4vh;
+        right: 0;
+        width: 250px;
+        z-index: 1;
+    }
+    #menu-toggle:checked, #menu-toggle input:checked ~ label {
+        background-color: var(--black);
+        color: var(--white);
+        margin: 0 auto;
+        position: absolute;
+        width: 90vw;
+        left: -140%;
+    }
+    #menu-toggle:checked, #menu-toggle:checked ~ label {
+        position: absolute;
+        margin: 0 auto;
+    }
+    #menu-toggle a {
+        color: var(--black);
+        text-decoration: none;
+        text-transform: uppercase;
+        width: 90vw;
+    }
+    #menu-toggle input {
+        display: block;
+        height: 70px;
+        width: 90vw;
+        position: absolute;
+        top: -7px;
+        left: -5px;
+        padding: 0;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 2;
+    }
+    #menu-toggle label {
+        position: relative;
+        display: block;
+        width: 30px;
+        height: 30px;
+    }
+    #menu-toggle label span {
+        display: none;
+    }
+    #menu-toggle label div {
+        display: block;
+        width: 30px;
+        height: 2px;
+        margin-bottom: 6px;
+        position: relative;
+        z-index: 1;
+    }
+    ul {
+        position: absolute;
+        text-align: center;
+        left: -1001vw;
+    }
+    ul li {
+        background-color: var(--teal);
+        border-bottom: 1px solid var(--black);
+        padding: 3rem 0;
+        font-size: 22px;
+        width: 90vw;
+    }
+    #menu-toggle input:checked ~ ul {
+        left: -90%;
+        top: 3.9rem;
+    }
+    #menu-toggle label {
+        justify-content: center;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 1rem 0;
+        right: -100px;
+    }
+/* -------------------------------- */
+#about {
+    display: grid;
+    margin-top: 2rem;
+    padding: 1rem 0 2rem 0;
+}
+#about div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#about h3 {
+    font-size: 34pt;
+    grid-area: aboutHeader;
+    overflow: visible;
+    padding: 1rem;
+
+}
+#about h3 {
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+#about h4 {
+    font-size: 16pt;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+#about img {
+    padding: 1rem 4rem;
+    width: 23vw;
+}
+#about p {
+    font-size: 16pt;
+}
+#about section {
+    text-align: center;
+}
+#about section:first-child {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+#about section:nth-child(2) {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+#about section:nth-child(3) {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+#about section:nth-child(4) {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+.required {
+    text-align: left;
+}
+#contact {
+    display: grid;
+    padding: 1rem 0;
+}
+#contact h3 {
+    font-size: 30pt;
+    margin-bottom: 1rem;
+}
+#contact h3 span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18pt;
+    font-style: italic;
+    font-weight: normal;
+}
+#contact input[type="text"], #contact input[type="email"], #contact input[type="tel"] {
+    border: 3px solid var(--purple);
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    padding: 2rem 1rem 2rem 1rem;
+    width: 80vw;
+}
+#contact label {
+    float: left;
+    font-size: 16pt;
+    font-weight: bold;
+    padding: 1rem 0 1rem 30px;
+    text-transform: uppercase;
+    transform: translateY(50%);
+}
+#contact input::placeholder {
+    color: var(--black);
+    font-size: 16pt;
+}
+
+#destination, #travelTime {
+    border: 3px solid var(--purple);
+    padding: 2rem 19rem 2rem .5rem;
+}
+#destination label, #travelTime label {
+    text-align: left;
+}
+
+form {
+    text-align: center;
+}
+
+input[type="radio"] {
+    appearance: none;
+    border: 3px solid var(--purple);
+    border-radius: 50%;
+    display: block;
+    height: 85px;
+    width: 85px;
+}
+input[type="radio"]:checked {
+    fill: var(--purple);
+    border: 30px solid var(--purple);
+}
+input[type="submit"] {
+    background-color: var(--purple);
+    border: none;
+    color: var(--white);
+    font-size: 18pt;
+    letter-spacing: .01rem;
+    margin: 2rem auto .5rem auto;
+    padding: 2rem 11rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+label[for="email"], input[type="email"] {
+    margin-top: 13rem;
+}
+
+
+#prefEmail {
+    float: left;
+    margin-left: -310%;
+    position: absolute;
+    transform: translateY(-15%);
+}
+#prefPhone {
+    float: left;
+    margin-left: -2%;
+    margin-bottom: 5rem;
+    position: absolute;
+    transform: translateY(45%);
+}
+#prefText {
+    float: left;
+    margin-left: -504%;
+    position: absolute;
+    transform: translateY(230%);
+}
+
+#nums label {
+    font-weight: normal;
+    text-transform: capitalize;
+}
+#nums legend {
+    float: left;
+    font-size: 18pt;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    padding-left: 30px;
+    text-transform: uppercase;
+}
+
+
+#selects label {
+    transform: translateY(25%);
+}
+span[class="required"] {
+    color: var(--purple);
+}
+
+footer {
+    background-color: var(--light-gray);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    text-align: center;
+}
+footer a, footer p {
+    color: var(--black);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14pt;
+    padding: 1rem 0;
+    text-decoration: none;
+}
+
+header h1 {
+    font-size: 40pt;
+    padding-top: 2rem;
+}
+header p {
+    font-size: 16pt;
+    padding: .5rem;
+}
+#intro h2 {
+    font-size: 32pt;
+    padding-top: 3rem;
+}
+#intro p {
+    font-size: 16pt;
+    padding: .5rem 0;
+}
+
+header h1, header p, #intro h2, #intro p {
+    line-height: 2rem;
+    margin: .1rem 2rem;
+}
+
+img {
+    padding-top: 1rem;
+    width: 100vw;
+}
+
+#logo img {
+    position: relative;
+    width: 40vw;
+}
+
+#plan {
+    margin-top: 2rem;
+    padding: 1rem 0 2rem 0;
+    text-align: center;
+}
+#plan h3 {
+    font-size: 32pt;
+    padding: 1.5rem 0 0 1.8rem;
+    text-align: left;
+}
+#plan h4 {
+    font-size: 20pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    transform: translateY(4rem);
+}
+#plan img {
+    padding: 5rem 8rem 3rem 8rem;
+    width: 40vw;
+}
+
+#plan img[src="images/stay.svg"] {
+    padding-top: 7.5rem;
+    padding-bottom: 4.5rem;
+}
+
+#testimonials {
+    text-align: center;
+}
+#testimonials h3 {
+    font-size: 32pt;
+    padding: 4rem 0 0 1rem;
+    text-align: left;
+}
+#testimonials h4 {
+    font-size: 24pt;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+#testimonials img {
+    width: 45vw;
+}
+#testimonials p {
+    font-size: 16pt;
+}
+#testimonials q {
+    font-size: 17pt;
+    line-height: 1.7rem;
+    /* padding: 0 1rem; */
+}
+#testimonials section {
+    margin: 0 auto;
+    max-width: 20rem;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+    #about {
+        transform: translateY(45%);
+    }
+    #about h3 {
+        margin-top: 33rem;
+        padding-bottom: 1.5rem;
+    }
+    #about h4 {
+        font-size: 14pt;
+        font-weight: bold;
+        padding: .5rem;
+        text-transform: uppercase;
+    }
+    #about section {
+        padding-bottom: 1rem;
+        text-align: center;
+    }
+    #about section:nth-child(odd) {
+        float: left;
+        padding-left: 8rem;
+    }
+
+    footer {
+        background-color: var(--light-gray);
+        display: flex;
+        font-size: 12pt;
+        max-width: 100vw;
+        padding: 1rem;
+    }
+    footer p {
+        float: left;
+        margin-left: 2rem;
+    }
+    footer a:first-of-type {
+        color: var(--black);
+        margin: 0 auto;
+        text-decoration: none;
+    }
+    footer a:last-of-type {
+        color: var(--black);
+        float: right;
+        margin-right: 2rem;
+        text-decoration: none;
+    }
+
+    h3 {
+        font-size: 24pt;
+    }
+
+    /* header {
+        display: flex;
+    } */
+    header h1 {
+        margin-top: -5rem;
+        transform: translateX(30%);
+    }
+    header p {
+        /* float: right; */
+        /* margin-right: 20rem; */
+        margin-left: 18rem;
+        max-width: 400px;
+        transform: translateY(-10%);
+    }
+    nav {
+        margin: 0 auto;
+        width: 100vw;
+    }
+    nav ul {
+        display: flex;
+    }
+    header h1 {
+        font-size: 28pt;
+    }
+
+    #main-content h2 {
+        font-size: 22pt;
+    }
+    #main-content p, header p {
+        line-height: 1.4rem;
+    }
+
+    #plan {
+        margin-bottom: 1rem;
+        max-width: 100vw;
+        padding-bottom: 4rem;
+        width: 100vw;
+    }
+    #plan h4 {
+        font-size: 14pt;
+        font-weight: bold;
+        text-transform: uppercase;
+        transform: translateY(2.5rem);
+    }
+    #plan img {
+        padding: 4rem 4rem 2rem 4rem;
+    }
+    #plan section {
+        text-align: center;
+    }
+    #plan section:first-of-type {
+        float: left;
+        transform: translateX(8%);
+    }
+    #plan section:nth-of-type(2) {
+        float: right;
+        transform: translateX(-5%);
+    }
+    #plan section:nth-of-type(3) {
+        float: left;
+        margin-top: 2rem;
+        transform: translateX(-92%);
+    }
+    #plan section:nth-of-type(4) {
+        margin-right: -12rem;
+        transform: translateY(8%);
+    }
+
+    #testimonials {
+        max-width: 100vw;
+        padding-bottom: 2rem;
+    }
+    #testimonials h3 {
+        transform: translateX(5%);
+    }
+    #testimonials h4 {
+        font-size: 18pt;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    #testimonials section {
+        margin: 0 .1rem;
+        max-width: 49%;
+        padding-top: 1rem;
+        text-align: center;
+    }
+    #testimonials section:nth-child(odd) {
+        float: left;
+    }
+    #testimonials section:nth-child(even) {
+        float: right;
+    }
+
+
+
+    /* ----nav menu styles---- */
+    #menu-toggle:checked, #menu-toggle input:checked ~ label {
+        visibility: hidden;
+    }
+
+    /* not hiding the yellow rectangle like it should */
+    #menu-toggle input, #menu-toggle input ~ label {
+        visibility: hidden;
+    }
+    #toggle {
+        display: none;
+    }
+    ul, ul li {
+        display: contents;
+    }
+    ul li {
+        background-color: var(--yellow);
+        border: none;
+        color: var(--black);
+        /* display: flex;
+        flex-direction: row; */
+        margin: 0 auto;
+        padding: 1rem;
+        width: 20vw;
+    }
+
+    #menu-toggle {
+        visibility: hidden;
+    }
+    #menu-toggle ul li a {
+        background-color: var(--white);
+        color: var(--black);
+        display: grid;
+        font-weight: bold;
+        margin: 1rem;
+        padding: 1rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        visibility: visible;
+    }
+    #menu-toggle ul li a:hover, #menu-toggle ul li a:focus {
+    background-color: var(--yellow);
+    text-align: left;
+}
+#contact {
+    display: grid;
+    margin-top: 17rem;
+    padding: 1rem 0;
+}
+#contact h3 {
+    font-size: 30pt;
+    margin-bottom: 1rem;
+}
+#contact h3 span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18pt;
+    font-style: italic;
+    font-weight: normal;
+}
+#contact input[type="text"], #contact input[type="email"], #contact input[type="tel"] {
+    border: 3px solid var(--purple);
+    margin: 0 14rem 2rem auto;
+    padding: 2rem 6rem 2rem 1rem;
+    width: 80vw;
+}
+#contact label {
+    float: left;
+    font-size: 16pt;
+    font-weight: bold;
+    padding: 2rem 0 1rem .5rem;
+    text-transform: uppercase;
+}
+#contact input::placeholder {
+    color: var(--black);
+    font-size: 16pt;
+}
+
+#nums legend {
+    font-size: 18pt;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+input[type="radio"] {
+    appearance: none;
+    border: 2px solid var(--purple);
+    border-radius: 50%;
+    display: block;
+    height: 85px;
+    margin: 0 5rem;
+    width: 85px;
+}
+input[type="radio"]:checked {
+    fill: var(--purple);
+    /* background-color: var(--purple); */
+    border: 30px solid var(--purple);
+}
+input[type="submit"] {
+    background-color: var(--purple);
+    border: none;
+    color: var(--white);
+    float: right;
+    font-size: 18pt;
+    letter-spacing: .01rem;
+    margin: 2rem 15rem .5rem auto;
+    padding: 1.8rem 8rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+#destination, #travelTime {
+    border: 3px solid var(--purple);
+    margin: 0 15rem 0 1rem;
+    padding: 1.5rem 38rem 1.5rem .5rem;
+}
+
+/* v not doing anything?? v  */
+#destination label, #travelTime label {
+    text-align: left;
+}
+form {
+    text-align: center;
+}
+
+@media screen and (min-width: 1025px) {
+
+    #about {
+         padding: 5rem 0;
+    }
+    #about h3 {
+        font-size: 28pt;
+        transform: translateX(-15%);
+    }
+    #about h4 {
+        font-size: 14pt;
+        font-weight: bold;
+        padding: .5rem;
+        text-transform: uppercase;
+    }
+    #about section {
+        display: inline-block;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    body {
+        margin: 0 auto;
+        max-width: 100vw;
+        width: 100vw;
+    }
+
+    header h1 {
+        font-size: 24pt;
+    }
+
+.required {
+    text-align: left;
+}
+#contact {
+    display: grid;
+    padding: 1rem 0;
+    transform: translateY(10%);
+}
+#contact h3 {
+    font-size: 30pt;
+    transform: translateX(-30%);
+}
+#contact h3 span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18pt;
+    font-style: italic;
+    font-weight: normal;
+}
+#contact input[type="text"], #contact input[type="email"], #contact input[type="tel"] {
+    border: 3px solid var(--purple);
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    padding: 1.5rem 1rem;
+    width: 25vw;
+}
+#contact label {
+    font-size: 16pt;
+    font-weight: bold;
+    padding: 2rem 0 1rem .5rem;
+    text-transform: uppercase;
+}
+#contact input::placeholder {
+    color: var(--black);
+    font-size: 16pt;
+}
+
+label[for="fName"] {
+    margin-top: 2rem;
+}
+
+#names {
+    float: left;
+    transform: translateX(-30%);
+}
+
+#nums {
+    max-width: 25vw;
+    transform: translateY(-40%);
+}
+#nums legend {
+    font-size: 18pt;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+input[type="radio"] {
+    appearance: none;
+    border: 2px solid var(--purple);
+    border-radius: 50%;
+    display: block;
+    height: 85px;
+    width: 85px;
+}
+input[type="radio"]:checked {
+    fill: var(--purple);
+    /* background-color: var(--purple); */
+    border: 30px solid var(--purple);
+}
+input[type="submit"] {
+    background-color: var(--purple);
+    border: none;
+    color: var(--white);
+    font-size: 18pt;
+    letter-spacing: .01rem;
+    margin: 2rem auto .5rem auto;
+    padding: 2rem 11rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+#destination, #travelTime {
+    border: 3px solid var(--purple);
+    padding: 2rem 19rem 2rem .5rem;
+}
+#destination label, #travelTime label {
+    text-align: left;
+}
+form {
+    text-align: center;
+}
+form div {
+    display: grid;
+    margin: 0 auto;
+    width: 100vw;
+}
+
+#mySubmit {
+    margin-top: 3rem;
+    padding: 1.2rem 5rem;
+    text-align: center;
+    transform: translateX(-167%);
+}
+
+fieldset {
+    display: flex;
+    margin-bottom: -8rem;
+    transform: translateY(-90%);
+}
+fieldset legend {
+    transform: translateY(150%);
+}
+
+#prefText{
+    margin: 0 3rem;
+}
+select {
+    width: 30vw;
+}
+#selects {
+    margin-right: -60rem;
+    transform: translateY(-174%);
+}
+#selects label {
+    transform: translateX(-45%);
+}
+
+    footer {
+        background-color: var(--light-gray);
+        display: flex;
+        font-size: 12pt;
+        padding: 1rem;
+        text-align: center;
+        width: 100vw;
+    }
+    footer p {
+        float: left;
+        margin-left: 2rem;
+    }
+    footer a:first-of-type {
+        color: var(--black);
+        margin: 0 auto;
+        text-decoration: none;
+    }
+    footer a:last-of-type {
+        color: var(--black);
+        float: right;
+        margin-right: 2rem;
+        text-decoration: none;
+    }
+
+    header h1 {
+        float: right;
+        font-size: 34pt;
+        position: relative;
+        top: 20px;
+        transform: translateX(-250%);
+    }
+    header img {
+        margin: 1rem 0 0 12rem;
+    }
+    header p {
+        float: right;
+        max-width: 400px;
+        position: relative;
+        top: 70px;
+        transform: translateX(-56%);
+    }
+
+    h2, h3 {
+        font-size: 16pt;
+    }
+
+    #intro h2 {
+        font-size: 28pt;
+        margin-left: -49rem;
+    }
+    #intro img {
+        padding: .5rem;
+    }
+    #intro p {
+        line-height: 1.6rem;
+        padding: .5rem 16rem;
+    }
+
+    #main-content {
+        text-align: center;
+    }
+
+    #menu-toggle {
+        visibility: hidden;
+    }
+    #menu-toggle ul li a {
+        background-color: var(--white);
+        color: var(--black);
+        display: grid;
+        font-weight: bold;
+        margin: 1rem;
+        padding: 1rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        visibility: visible;
+    }
+    #menu-toggle ul li a:hover, #menu-toggle ul li a:focus {
+        background-color: var(--yellow);
+    }
+
+    nav {
+        margin-bottom: 2.5rem;
+        text-align: center;
+    }
+    nav li {
+        margin: 0 2rem;
+        width: 200px;
+    }
+    nav ul {
+        display: flex;
+        justify-content: center;
+    }
+    /* nav {
+        grid-column: 1/4;
+        grid-row: 1/-1;
+    } */
+
+    p {
+        line-height: 1.5rem;
+    }
+
+    #plan {
+        margin-bottom: 1rem;
+        padding: 5rem 0;
+    }
+    #plan img {
+        padding: 3rem 2rem 2rem 2rem;
+    }
+    #plan h3 {
+        font-size: 28pt;
+        padding-top: 2rem;
+        transform: translateX(-25%);
+    }
+    #plan h4 {
+        font-size: 14pt;
+        font-weight: bold;
+        text-transform: uppercase;
+        transform: translateY(2rem);
+    }
+    #plan section {
+        text-align: center;
+        padding: 1rem;
+    }
+    #plan section:nth-of-type(odd) {
+        float: left;
+    }
+    #plan section:first-of-type {
+        transform: translateX(101%);
+    } 
+    #plan section:nth-of-type(2) {
+        transform: translateX(10%);
+    }
+
+    #testimonials {
+        padding: 5rem 0;
+    }
+    #testimonials h3 {
+        font-size: 28pt;
+        transform: translateX(-25%);
+    }
+    #testimonials h4 {
+        font-size: 14pt;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    #testimonials img {
+        padding: .5rem;
+    }
+    #testimonials section {
+        max-width: 930px;
+        padding: 1rem .5rem;
+        text-align: center;
+        transform: translateX(15%);
+    }
+    #testimonials section:nth-of-type(odd) {
+        float: left;
+    }
+    #testimonials section:nth-of-type(3) {
+        transform: translateX(55%);
+    }
+    #testimonials section:nth-of-type(4) {
+        transform: translateX(30%);
+    }
+    #testimonials section q {
+        padding: 3rem;
+    }
+  }
